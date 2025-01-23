@@ -83,7 +83,14 @@ class HomeActivity extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(child: Text("Hossain")),
+            DrawerHeader(
+              padding: EdgeInsets.all(0),
+                child: UserAccountsDrawerHeader(
+                  decoration: BoxDecoration(color: Colors.grey),
+                  accountName: Text("Hossain Ahammed"),
+                  accountEmail: Text("Info@Hossain.com"),
+                  currentAccountPicture: Image.network("https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png"),
+                )),
             ListTile(leading:Icon(Icons.home),title: Text("Home"),onTap: (){Mysnackbar("Home", context);},),
             ListTile(leading:Icon(Icons.contact_emergency),title: Text("Contact"),onTap: (){Mysnackbar("Contact", context);},),
             ListTile(leading:Icon(Icons.email),title: Text("Email"),onTap: (){Mysnackbar("Email", context);},),
