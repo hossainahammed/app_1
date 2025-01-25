@@ -50,6 +50,20 @@ class HomeActivity extends StatelessWidget {
      // bottomNavigationBar:  (),
       //floatingActionButton: (),
       ),
+      body: Center(
+      child:Container(
+        height:250,
+        width: 250,
+        alignment: Alignment.topCenter,
+        margin: EdgeInsets.all(30),
+        padding: EdgeInsets.all(40),
+        decoration: BoxDecoration(color: Colors.green,
+        border: Border.all(color: Colors.black,width: 6),
+          borderRadius: BorderRadius.circular(16), // Rounded corners with a radius of 1
+        ),
+        child: Image.network("https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png"),
+      ),
+      ),
       floatingActionButton: FloatingActionButton(
         elevation: 10,
         backgroundColor:Colors.pinkAccent,
