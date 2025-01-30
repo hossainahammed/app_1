@@ -27,6 +27,12 @@ class HomeActivity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+ ButtonStyle buttonStyle= ElevatedButton.styleFrom(
+  padding:EdgeInsets.all(25),
+   backgroundColor: Colors.green,
+   foregroundColor: Colors.white,
+   shape:RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(40)))
+  );
     return Scaffold(
       appBar: AppBar(
       title:Text("My APP Bar......."),
@@ -76,7 +82,10 @@ class HomeActivity extends StatelessWidget {
                   onPressed: () {
                     Mysnackbar("I am Text Button", context);
                   },
-                  child: Text('Text Button'))
+                  child: Text('Text Button')),
+              ElevatedButton(onPressed: (){Mysnackbar("I am Elevated Button", context);}, child: Text('Elevated Button'),style:buttonStyle,),
+              OutlinedButton(onPressed: (){Mysnackbar("I am Elevated Button", context);}, child: Text('Elevated Button')),
+              
             ],
           ),
         ],
