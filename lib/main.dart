@@ -28,8 +28,17 @@ class HomeActivity extends StatelessWidget {
 
   MyAlertDialog(context){
     return showDialog(context: context, builder: (BuildContext context){
-      return Expanded(child: AlertDialog(title :
-      Text("Alert !"),content: Text("Do you want to delete"),));
+      return Expanded(
+          child: AlertDialog(
+              title : Text("Alert !"),
+              content: Text("Do you want to delete"),
+              actions: [
+               TextButton(onPressed: () {Mysnackbar("Delete Success", context);
+               Navigator.of(context).pop();}, child: Text("Yes")),
+              TextButton(onPressed: () {Navigator.of(context).pop();}, child: Text("No")),
+
+
+      ],));
     });
     
   }
@@ -91,8 +100,8 @@ class HomeActivity extends StatelessWidget {
                     Mysnackbar("I am Text Button", context);
                   },
                   child: Text('Text Button')),
-              ElevatedButton(onPressed: (){Mysnackbar("I am Elevated Button", context);}, child: Text('Elevated Button'),style:buttonStyle,),
-              OutlinedButton(onPressed: (){Mysnackbar("I am Elevated Button", context);}, child: Text('Elevated Button')),
+              //ElevatedButton(onPressed: (){Mysnackbar("I am Elevated Button", context);}, child: Text('Elevated Button'),style:buttonStyle,),
+              OutlinedButton(onPressed: (){Mysnackbar("I am Outlined Button", context);}, child: Text('Outlined Button')),
               ElevatedButton(onPressed: (){MyAlertDialog(context);}, child: Text('Click me'),),
             ],
           ),
