@@ -25,6 +25,14 @@ class HomeActivity extends StatelessWidget {
     );
   }
 
+
+  MyAlertDialog(context){
+    return showDialog(context: context, builder: (BuildContext context){
+      return Expanded(child: AlertDialog(title :
+      Text("Alert !"),content: Text("Do you want to delete"),));
+    });
+    
+  }
   @override
   Widget build(BuildContext context) {
  ButtonStyle buttonStyle= ElevatedButton.styleFrom(
@@ -85,7 +93,7 @@ class HomeActivity extends StatelessWidget {
                   child: Text('Text Button')),
               ElevatedButton(onPressed: (){Mysnackbar("I am Elevated Button", context);}, child: Text('Elevated Button'),style:buttonStyle,),
               OutlinedButton(onPressed: (){Mysnackbar("I am Elevated Button", context);}, child: Text('Elevated Button')),
-              
+              ElevatedButton(onPressed: (){MyAlertDialog(context);}, child: Text('Click me'),),
             ],
           ),
         ],
