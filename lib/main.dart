@@ -30,7 +30,7 @@ class HomeActivity extends StatelessWidget {
     return showDialog(context: context, builder: (BuildContext context){
       return Expanded(
           child: AlertDialog(
-              title : Text("Alert !"),
+              title : Text(" Alert !"),
               content: Text("Do you want to delete"),
               actions: [
                TextButton(onPressed: () {Mysnackbar("Delete Success", context);
@@ -88,8 +88,13 @@ class HomeActivity extends StatelessWidget {
                 border: Border.all(color: Colors.black, width: 6),
                 borderRadius: BorderRadius.circular(16),
               ),
-              child: Image.network(
-                  "https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png"),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30), // Ensures image gets rounded corners
+                child: Image.network(
+                  "https://scontent.fjsr13-1.fna.fbcdn.net/v/t39.30808-6/466125960_2020752345026508_9214786340302204417_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGMeszwOGGsfvWMgQ3A8J69bkNkgIHz0-9uQ2SAgfPT74qaHqukmway9KFhLEapkhaQz6FKwMiuusK-LDp4vgI-&_nc_ohc=-OQ9veC84V4Q7kNvgHLF8-H&_nc_zt=23&_nc_ht=scontent.fjsr13-1.fna&_nc_gid=AxnrsKZMU2qcKCl8K4C6Q20&oh=00_AYCjDVsDgD1YDj65xZ60sRTRh579C8eVX6oqLx3sDUglTA&oe=67A4D5FA",
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
           Row(
@@ -101,8 +106,8 @@ class HomeActivity extends StatelessWidget {
                   },
                   child: Text('Text Button')),
               //ElevatedButton(onPressed: (){Mysnackbar("I am Elevated Button", context);}, child: Text('Elevated Button'),style:buttonStyle,),
-              OutlinedButton(onPressed: (){Mysnackbar("I am Outlined Button", context);}, child: Text('Outlined Button')),
-              ElevatedButton(onPressed: (){MyAlertDialog(context);}, child: Text('Click me'),),
+              OutlinedButton(onPressed: (){Mysnackbar("I am Outlined Button", context);},style:buttonStyle, child: Text('Outlined Button'),),
+              ElevatedButton(onPressed: (){MyAlertDialog(context);},style:buttonStyle, child: Text('Click me'),),
             ],
           ),
         ],
