@@ -1,5 +1,8 @@
+import 'package:app_1/simple_navigation.dart';
 import 'package:flutter/material.dart';
+
 //import 'package:flutter/cupertino.dart';
+
 void main(){
   runApp(Myapp());
 }
@@ -22,6 +25,12 @@ class HomeActivity extends StatelessWidget {
   Mysnackbar(message,context){
     return ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content:Text(message))
+    );
+  }
+  void simple_navigation(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SampleNavigationPage()),
     );
   }
 
@@ -103,8 +112,15 @@ class HomeActivity extends StatelessWidget {
               TextButton(
                   onPressed: () {
                     Mysnackbar("I am Text Button", context);
+
                   },
                   child: Text('Text Button')),
+              TextButton(
+                  onPressed: () {
+                    simple_navigation(context);
+
+                  },
+                  child: Text('Simple navigation Button')),
               //ElevatedButton(onPressed: (){Mysnackbar("I am Elevated Button", context);}, child: Text('Elevated Button'),style:buttonStyle,),
               OutlinedButton(onPressed: (){Mysnackbar("I am Outlined Button", context);},style:buttonStyle, child: Text('Outlined Button'),),
               ElevatedButton(onPressed: (){MyAlertDialog(context);},style:buttonStyle, child: Text('Click me'),),
